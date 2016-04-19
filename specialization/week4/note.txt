@@ -1,0 +1,26 @@
+* k-mean algorithm
+
+	=======================================
+	mean : 평균값
+	median : 중앙값
+	norm : 쉽게 벡터의 길이를 부여한 것. 유클리디안 norm은 각 벡터 제곱합의 루트.
+	=======================================
+
+	unsupervised learning의 대표적인 알고리즘으로,
+	k개의 클러스터로 데이터를 분류할 때 사용한다.
+
+	클러스터링을 마치고 label을 부여하면, 새로운 데이터의 추가시 multi-class classification 문제로 풀 수도 있다.
+
+
+	먼저 몇 개의 그룹(k개)으로 분류할지 결정한 상태로 시작한다.
+	임의의 지점으로 k개의 centroid를 잡고 다음 두 과정을 반복한다.
+
+	1. cluster assignment step
+		모든 데이터에 대해 centroid와의 거리를 구해 가장 가까운 거리인 cluster에 할당한다.
+	2. move centroid step
+		클러스터의 모든 노드의 mean값을 구해 새로운 centroid를 잡는다.
+
+	이 두 단계를 converge 할 때까지 수행한다.
+
+
+
