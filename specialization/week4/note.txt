@@ -1,3 +1,36 @@
+
+Week4. Clustering and Similarity
+================================================================================
+
+* tf-idf (Term frequency - inverse document frequency)
+	희소단어들의 중요도를 높이는 방법
+
+	important word의 특성
+	- common locally : Appears frequently in document
+	- rare globally : Appears rarely in corpus
+
+	- tf : word count
+	- idf : log (#docs / 1 + #docs using word)
+	: tf * idf 한 결과를 취하면 된다.
+
+* 1-Nearest neighbor search
+	Input: Query article (A)
+	Output: Most similar article
+
+	Algorithm:
+		- Search over each article B in corpus
+		  . Compute s = similarity(A,B)
+		  . If s > Best_s, record T = B
+		    and set Best_s = s
+		- Return T
+
+* k-Nearest neighbor
+	Input: Query article (A)
+	Output: List of k similar articles
+
+		가장 관련있는 k개의 기사 모음을 보여준다.
+		  
+
 * k-mean algorithm
 
 	=======================================
@@ -23,4 +56,43 @@
 	이 두 단계를 converge 할 때까지 수행한다.
 
 
+
+Question.
+	1. A country, called Simpleland, has a language with a small vocabulary of just “the”, “on”, “and”, “go”, “round”, “bus”, and “wheels”. For a word count vector with indices ordered as the words appear above, what is the word count vector for a document that simply says “the wheels on the bus go round and round.”
+Please enter the vector of counts as follows: If the counts were ["the"=1, “on”=3, "and"=2, "go"=1, "round"=2, "bus"=1, "wheels"=1], enter 1321211.
+
+		단어 수 세서 넣어라.
+		=> 2111211
+
+	2. In Simpleland, a reader is enjoying a document with a representation: [1 3 2 1 2 1 1]. Which of the following articles would you recommend to this reader next?
+		1) [7 0 2 1 0 0 1] : 6 3 0 0 2 1 0 = 12
+		2) [1 7 0 0 2 0 1] : 0 4 2 1 0 1 0 = 8 
+		3) [1 0 0 0 7 1 2] : 0 3 2 1 5 0 1 = 12
+		4) [0 2 0 0 7 1 1] : 1 1 2 1 5 0 0 = 10
+
+		유사성을 어떻게 따져야 하는지 모르겠지만, 각 단어의 빈도차를 합해 가장 낮은 값인 2번을 선택.
+
+	3. A corpus in Simpleland has 99 articles. If you pick one article and perform 1-nearest neighbor search to find the closest article to this query article, how many times must you compute the similarity between two articles?
+		1) 98
+		2) 98*2 = 196
+		3) 98/2 = 49
+		4) (98)^2
+		5) 99
+
+		1-nearest neighbor search는 하나하나 비교해 similarity를 계산하는 것이다.
+
+	4. For the TF-IDF representation, does the relative importance of words in a document depend on the base of the logarithm used? For example, take the words "bus" and "wheels" in a particular document. Is the ratio between the TF-IDF values for "bus" and "wheels" different when computed using log base 2 versus log base 10?
+
+		ratio는 상관 없을 것이다.
+
+	5.  Which of the following statements are true? (Check all that apply):
+
+		[v] Deciding whether an email is spam or not spam using the text of the email and some spam / not spam labels is a supervised learning problem.
+
+		[ ] Dividing emails into two groups based on the text of each email is a supervised learning problem.
+
+		[v] If we are performing clustering, we typically assume we either do not have or do not use class labels in training the model.
+
+	6. Which of the following pictures represents the best k-means solution? (Squares represent observations, plus signs are cluster centers, and colors indicate assignments of observations to cluster centers.)
+		2번.
 
