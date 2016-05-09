@@ -1,0 +1,32 @@
+Linear classifiers
+	- decision boundary/
+
+
+Deep learning score card
+
+	Pros
+	* Enables learning of features rather than hand tuning
+	* Impressive performance gains
+	    - Computer vision
+	    - Speech recognition
+	    - Some text analysis
+	* Potential for more impact
+
+	비선형적이고 복잡한 특징을 표현 가능하게 한다.
+	뛰어난 결과를 컴퓨터 비전에서뿐 아니라 음성인식 같은 시스템에서도 보여준다.
+	텍스트 분석에서도 쓰인다.
+
+	Cons
+	* Requires a log of data for high accuracy
+	* Computationally really expensive
+	* Extremely hard to tune
+	    - Choice of architecture
+	    - Parameter types
+	    - Hyperparameters
+	    - Learning algorithm
+
+	학습시키기 위한 데이터가 많이 필요하다.
+	계산량이 많다. 선택지가 많다.
+
+Deep Features
+	
